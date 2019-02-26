@@ -1,0 +1,105 @@
+
+
+<script type="text/javascript">
+
+
+	
+
+
+
+
+// const playerSelection = 'rock'
+
+
+
+
+
+// computerPlay()
+
+
+function playRound() {
+	const computerSelection = computerPlay();
+
+	function computerPlay() {
+		var choices = ["rock", "paper", "scissors"];
+		var randomChoice = Math.floor(Math.random() * choices.length);
+		return(choices[randomChoice]);
+}
+
+
+
+	var playerSelection = (prompt("What's it going to be?", " ")).toLowerCase();
+	console.log("You said: " + playerSelection)
+	console.log("Computer: " + computerSelection);
+
+		if ((playerSelection == "rock") && (computerSelection == "scissors")) {
+			console.log("You win! Rock beats scissors.")
+			playerPoints++;
+		}
+
+		else if ((playerSelection == 'rock') && (computerSelection == 'paper')) {
+			console.log("You lost! Paper beats Rock.")
+			computerPoints++;
+
+		}
+		else if ((playerSelection =='rock') && (computerSelection == 'rock')) {
+			console.log("You tied.");
+
+		}
+		else if ((playerSelection == 'paper') && (computerSelection == 'rock')) {
+			console.log("You win! Paper beats Rock.")
+			playerPoints++;
+		}
+		else if ((playerSelection == 'paper') && (computerSelection == 'scissors')) {
+			console.log("You lost! Scissors beats paper.")
+			computerPoints++;
+		
+		}
+		else if ((playerSelection == 'paper') && (computerSelection == 'paper')) {
+			console.log("You tied.");
+			
+		}
+		else if ((playerSelection == 'scissors') && (computerSelection == 'paper')) {
+			console.log("You win! Scissors beats paper.")
+			playerPoints++;
+			
+		}
+		else if ((playerSelection == 'scissors') && (computerSelection == 'rock')) {
+			console.log("You lost! Rock beats scissors.")
+			computerPoints++;
+			
+		}
+		else {
+			console.log("You tied.");
+		}
+
+};
+
+
+let playerPoints = 0;
+let computerPoints = 0;
+
+
+function game() {
+	for (var i = 1; i < 6; i++) playRound(i);
+
+	if ((i == 5) && (playerPoints > computerPoints)) {
+		console.log("---->>>>> You won the game!!! <<<<<----"); 
+			}
+			else if (computerPoints > playerPoints) {
+			console.log("----- Sorry! You lost :( Try again next time. -----");
+			}
+			else {
+				console.log(" ~~~~~ You tied. Not so bad! ~~~~~")
+			}
+
+
+	}
+		
+	
+
+
+game();
+
+
+</script>
